@@ -1,10 +1,11 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+import "./styles.css";
+// import "./bases/01-const-let";
+// import "./bases/02-template-strings";
+// import "./bases/03-object-literal";
+import "./bases/04-arrays";
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
+<div>
+  <h1>Hello, World!</h1>
+</div>
+`;
