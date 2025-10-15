@@ -1,14 +1,14 @@
 const firstName: string = "John";
-const lasName: string = "Doe";
+const lastName: string = "Doe";
 const age: number = 30;
 
 const person: {
   firstName: string;
-  lasName: string;
+  lastName: string;
   age: number;
 } = {
   firstName,
-  lasName,
+  lastName,
   age,
 };
 
