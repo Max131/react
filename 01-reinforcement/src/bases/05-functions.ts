@@ -9,15 +9,20 @@ const message2 = greet2("Bob");
 
 console.log(message, message2);
 
-function getUser() {
+interface User {
+  id: number;
+  username: string;
+}
+
+function getUser(): User {
   return {
-    uid: 1,
+    id: 1,
     username: "Alice",
   };
 }
 
-const getUser2 = (): object => ({
-  uid: 2,
+const getUser2 = (): User => ({
+  id: 2,
   username: "Bob",
 });
 
