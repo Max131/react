@@ -14,12 +14,16 @@ const style: CSSProperties = {
 };
 
 export const ItemCounter = ({ name, quantity = 0 }: Props) => {
+  const handeClick = () => {
+    console.log(`Clicked ${name}`);
+  };
+
   return (
     <section style={style}>
       <span style={{ flex: 1 }}>{name}</span>
-      <button>+1</button>
+      <button onClick={handeClick}>-1</button>
       <span>{quantity}</span>
-      <button>-1</button>
+      <button>+1</button>
     </section>
   );
 };
