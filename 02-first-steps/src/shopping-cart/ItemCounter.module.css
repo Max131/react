@@ -1,0 +1,18 @@
+.item-row {
+  font:
+    1.125rem/1.4 system-ui,
+    sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-block: 0.5rem;
+  width: min(100%, 400px);
+}
+
+.item-label {
+  flex-grow: 1;
+}
+
+.color-red {
+  color: red;
+}
