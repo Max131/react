@@ -10,12 +10,13 @@ const style: CSSProperties = {
   alignItems: "center",
   gap: "1rem",
   marginBlock: 8,
+  width: "min(100%, 400px)",
 };
 
 export const ItemCounter = ({ name, quantity = 0 }: Props) => {
   return (
     <section style={style}>
-      <span style={{ width: 100 }}>{name}</span>
+      <span style={{ flex: 1 }}>{name}</span>
       <button>+1</button>
       <span>{quantity}</span>
       <button>-1</button>
