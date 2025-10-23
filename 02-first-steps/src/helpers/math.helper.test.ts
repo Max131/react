@@ -1,14 +1,46 @@
-import { test, expect } from "vitest";
-import { add } from "./math.helper";
+import { describe, test, expect } from "vitest";
+import { add, substract } from "./math.helper";
 
-test("Should add two positive numbers", () => {
-  // 1. Arrange
-  const a = 1;
-  const b = 2;
+describe("add", () => {
+  test("Should add two positive numbers", () => {
+    // 1. Arrange
+    const a = 1;
+    const b = 2;
 
-  // 2. Act
-  const result = add(a, b);
+    // 2. Act
+    const result = add(a, b);
 
-  // 3. Assert
-  expect(result).toBe(3);
+    // 3. Assert
+    expect(result).toBe(3);
+  });
+
+  test("Should add two negative numbers", () => {
+    // 1. Arrange
+    const a = -1;
+    const b = -2;
+
+    // 2. Act
+    const result = add(a, b);
+
+    // 3. Assert
+    expect(result).toBe(-3);
+  });
+
+  test("Should substract two positive numbers", () => {
+    const a = 5;
+    const b = 2;
+
+    const result = substract(a, b);
+
+    expect(result).toBe(a - b);
+  });
+
+  test("Should substract two negative numbers", () => {
+    const a = -5;
+    const b = -2;
+
+    const result = substract(a, b);
+
+    expect(result).toBe(-3);
+  });
 });
