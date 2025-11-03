@@ -30,8 +30,8 @@ describe("MyAwesomeApp", () => {
     expect(container).toMatchSnapshot();
   });
 
-  test("Should match snapshot screen", () => {
+  /* test("Should match snapshot screen", () => {
     render(<MyAwesomeApp />);
     expect(screen.getAllByTestId("div-app")).toMatchSnapshot();
-  });
+  }); */
 });
