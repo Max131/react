@@ -21,13 +21,13 @@ export function MyAwesomeApp() {
   };
 
   return (
-    <>
+    <div data-test-id="div-app">
       <h1 data-testid="first-name-title">{name}</h1>
       <h3>{lastName}</h3>
-      <p> {figures.join(", ")} </p>
+      <p class="mi-clase-favorita"> {figures.join(", ")} </p>
       <p> {5 + 6} </p>
       <h1>{isActive ? "Active" : "Inactive"}</h1>
       <p style={myStyles}>{JSON.stringify(address, null, 2)}</p>
-    </>
+    </div>
   );
 }
