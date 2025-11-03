@@ -58,4 +58,26 @@ describe("ItemCounter", () => {
 
     expect(screen.getByText("0")).toBeDefined();
   });
+
+  test("shouwld show count in red when quantity is 0", () => {
+    const name = "Control de Nintendo";
+    const quantity = 0;
+
+    render(<ItemCounter name={name} quantity={quantity} />);
+
+    const itemText = screen.getByText(name);
+
+    expect(itemText.style.color).toBe("red");
+  });
+
+  test("shouwld show count in black when quantity is greater than 0", () => {
+    const name = "Control de Nintendo";
+    const quantity = 1;
+
+    render(<ItemCounter name={name} quantity={quantity} />);
+
+    const itemText = screen.getByText(name);
+
+    expect(itemText.style.color).toBe("black");
+  });
 });
