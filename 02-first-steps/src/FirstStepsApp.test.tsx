@@ -49,5 +49,25 @@ describe("FirstStepsApp", () => {
     render(<FirstStepsApp />);
 
     expect(mockItemCounter).toHaveBeenCalledTimes(5);
+    expect(mockItemCounter).toHaveBeenCalledWith({
+      name: "XBOX 360",
+      quantity: 2,
+    });
+    expect(mockItemCounter).toHaveBeenCalledWith({
+      name: "Pro Controller",
+      quantity: 1,
+    });
+    expect(mockItemCounter).toHaveBeenCalledWith({
+      name: "Castlevania IV",
+      quantity: 3,
+    });
+    expect(mockItemCounter).toHaveBeenCalledWith({
+      name: "The Legend of Zelda: Ocarina of Time",
+      quantity: 1,
+    });
+    expect(mockItemCounter).toHaveBeenCalledWith({
+      name: "Super Mario 64",
+      quantity: 4,
+    });
   });
 });
