@@ -1,4 +1,4 @@
-import { describe, expect, test, vi } from "vitest";
+import { afterEach, describe, expect, test, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { FirstStepsApp } from "./FirstStepsApp";
 
@@ -21,6 +21,10 @@ vi.mock("./shopping-cart/ItemCounter", () => ({
 // }));
 
 describe("FirstStepsApp", () => {
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
+
   test("Should render Shopping Cart", () => {
     render(<FirstStepsApp />);
     expect(FirstStepsApp).toBeDefined();
