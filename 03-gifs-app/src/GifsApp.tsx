@@ -13,7 +13,7 @@ export const GifsApp = () => {
       />
 
       {/* Search */}
-      <SearchBar />
+      <SearchBar placeholder="Buscar gifs" />
 
       {/* Búsquedas previas */}
       <PreviousSearches />
