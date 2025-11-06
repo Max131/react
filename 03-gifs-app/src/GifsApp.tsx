@@ -1,3 +1,5 @@
+import { mockGifs } from "./mock-data/gifs.mock";
+
 export const GifsApp = () => {
   return (
     <>
@@ -16,20 +18,25 @@ export const GifsApp = () => {
       {/* Búsquedas previas */}
       <section className="previous-searches">
         <h2>Búsquedas Previas</h2>
-        <div className="search-tags">
-          <ul>
-            <li>Pokemon</li>
-            <li>Mazinger Z</li>
-            <li>Voltron</li>
-            <li>Robotech</li>
-          </ul>
-        </div>
+        <ul className="previous-searches-list">
+          <li>Pokemon</li>
+          <li>Mazinger Z</li>
+          <li>Voltron</li>
+          <li>Robotech</li>
+        </ul>
       </section>
 
       {/* Gifs */}
       <section className="gifs-container">
-        <h2>Gifs</h2>
-        <div className="gifs-grid">{/* Aquí se mostrarán los gifs */}</div>
+        {mockGifs.map((gif) => (
+          <div key={gif.id} className="gif-card">
+            <img src={gif.url} alt={gif.title} />
+            <h3>{gif.title}</h3>
+            <p>
+              {gif.width}x{gif.height} (1.5mb)
+            </p>
+          </div>
+        ))}
       </section>
     </>
   );
