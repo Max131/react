@@ -1,7 +1,7 @@
 interface Props {
   placeholder?: string;
 }
-export const SearchBar = ({ placeholder = "" }: Props) => {
+export const SearchBar = ({ placeholder = "Buscar" }: Props) => {
   return (
     <search className="search-container">
       <input type="text" placeholder={placeholder} />
