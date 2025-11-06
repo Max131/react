@@ -1,4 +1,5 @@
 import { CustomHeader } from "./shared/components/CustomHeader";
+import { SearchBar } from "./shared/components/SearchBar";
 import { mockGifs } from "./mock-data/gifs.mock";
 
 export const GifsApp = () => {
@@ -11,10 +12,7 @@ export const GifsApp = () => {
       />
 
       {/* Search */}
-      <search className="search-container">
-        <input type="text" placeholder="Buscar gifs" />
-        <button>Buscar</button>
-      </search>
+      <SearchBar />
 
       {/* Búsquedas previas */}
       <section className="previous-searches">
