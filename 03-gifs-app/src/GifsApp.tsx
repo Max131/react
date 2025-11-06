@@ -1,5 +1,6 @@
 import { CustomHeader } from "./shared/components/CustomHeader";
 import { SearchBar } from "./shared/components/SearchBar";
+import { PreviousSearches } from "./gifs/components/PreviousSearches";
 import { mockGifs } from "./mock-data/gifs.mock";
 
 export const GifsApp = () => {
@@ -15,15 +16,7 @@ export const GifsApp = () => {
       <SearchBar />
 
       {/* Búsquedas previas */}
-      <section className="previous-searches">
-        <h2>Búsquedas Previas</h2>
-        <ul className="previous-searches-list">
-          <li>Pokemon</li>
-          <li>Mazinger Z</li>
-          <li>Voltron</li>
-          <li>Robotech</li>
-        </ul>
-      </section>
+      <PreviousSearches />
 
       {/* Gifs */}
       <section className="gifs-container">
