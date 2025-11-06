@@ -5,7 +5,10 @@ export const GifsApp = () => {
   return (
     <>
       {/* Header */}
-      <CustomHeader />
+      <CustomHeader
+        title="Buscador de gifs"
+        description="Descubre y comparte el gif perfecto"
+      />
 
       {/* Search */}
       <search className="search-container">
