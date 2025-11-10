@@ -3,8 +3,15 @@ import { SearchBar } from "./shared/components/SearchBar";
 import { PreviousSearches } from "./gifs/components/PreviousSearches";
 import { GifsList } from "./gifs/components/GifsList";
 import { mockGifs } from "./mock-data/gifs.mock";
+import { useState } from "react";
 
 export const GifsApp = () => {
+  const [previousTerms, setPreviousTerms] = useState(["gravity falls"]);
+
+  const handleTermClicked = (term: string) => {
+    console.log(`Term clicked: ${term}`);
+  };
+
   return (
     <>
       {/* Header */}
@@ -17,7 +24,10 @@ export const GifsApp = () => {
       <SearchBar placeholder="Buscar gifs" />
 
       {/* Búsquedas previas */}
-      <PreviousSearches searches={["Lorem", "Ipsum", "Dolor"]} />
+      <PreviousSearches
+        searches={previousTerms}
+        onLabelClick={handleTermClicked}
+      />
 
       {/* Gifs */}
       <GifsList gifs={mockGifs} />
