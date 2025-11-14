@@ -12,8 +12,13 @@ export const GifsApp = () => {
     console.log(`Term clicked: ${term}`);
   };
 
-  const handleSearch = (query: string) => {
-    console.log({ query });
+  const handleSearch = (query: string = "") => {
+    const trimedQuery = query.toLowerCase().trim();
+
+    if (trimedQuery.length === 0) return;
+    if (previousTerms.includes(trimedQuery)) return;
+
+    setPreviousTerms((prevTerms) => [trimedQuery, ...prevTerms.slice(0, 7)]);
   };
 
   return (
