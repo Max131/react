@@ -4,6 +4,7 @@ import { PreviousSearches } from "./gifs/components/PreviousSearches";
 import { GifsList } from "./gifs/components/GifsList";
 import { mockGifs } from "./mock-data/gifs.mock";
 import { useState } from "react";
+import { getGifsByQuery } from "./gifs/actions/get-gifs-by-query.action";
 
 export const GifsApp = () => {
   const [previousTerms, setPreviousTerms] = useState(["gravity falls"]);
@@ -12,13 +13,16 @@ export const GifsApp = () => {
     console.log(`Term clicked: ${term}`);
   };
 
-  const handleSearch = (query: string = "") => {
+  const handleSearch = async (query: string = "") => {
     const trimedQuery = query.toLowerCase().trim();
 
     if (trimedQuery.length === 0) return;
     if (previousTerms.includes(trimedQuery)) return;
 
     setPreviousTerms((prevTerms) => [trimedQuery, ...prevTerms.slice(0, 7)]);
+
+    const gifs = await getGifsByQuery(trimedQuery);
+    console.log(gifs);
   };
 
   return (
