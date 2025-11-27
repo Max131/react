@@ -7,7 +7,7 @@ export const getGifsByQuery = async (query: string): Promise<Gif[]> => {
     "https://api.giphy.com/v1/gifs/search",
     {
       params: {
-        api_key: "6ZV7mssqKALuc7PBBaHokHRmq878rviL",
+        api_key: import.meta.env.VITE_GIPHY_API_KEY,
         q: query,
         limit: 10,
         lang: "es",
