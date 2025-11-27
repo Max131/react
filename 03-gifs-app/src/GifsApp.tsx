@@ -2,12 +2,14 @@ import { CustomHeader } from "./shared/components/CustomHeader";
 import { SearchBar } from "./shared/components/SearchBar";
 import { PreviousSearches } from "./gifs/components/PreviousSearches";
 import { GifsList } from "./gifs/components/GifsList";
-import { mockGifs } from "./mock-data/gifs.mock";
+// import { mockGifs } from "./mock-data/gifs.mock";
 import { useState } from "react";
 import { getGifsByQuery } from "./gifs/actions/get-gifs-by-query.action";
+import type { Gif } from "./gifs/interfaces/gif.interface";
 
 export const GifsApp = () => {
-  const [previousTerms, setPreviousTerms] = useState(["gravity falls"]);
+  const [previousTerms, setPreviousTerms] = useState<string[]>([]);
+  const [gifs, setGifs] = useState<Gif[]>([]);
 
   const handleTermClicked = (term: string) => {
     console.log(`Term clicked: ${term}`);
@@ -22,7 +24,7 @@ export const GifsApp = () => {
     setPreviousTerms((prevTerms) => [trimedQuery, ...prevTerms.slice(0, 7)]);
 
     const gifs = await getGifsByQuery(trimedQuery);
-    console.log(gifs);
+    setGifs(gifs);
   };
 
   return (
@@ -32,18 +34,15 @@ export const GifsApp = () => {
         title="Buscador de gifs"
         description="Descubre y comparte el gif perfecto"
       />
-
       {/* Search */}
       <SearchBar placeholder="Buscar gifs" onQuery={handleSearch} />
-
       {/* Búsquedas previas */}
       <PreviousSearches
         searches={previousTerms}
         onLabelClick={handleTermClicked}
       />
-
       {/* Gifs */}
-      <GifsList gifs={mockGifs} />
+      <GifsList gifs={gifs} />
     </>
   );
 };
